@@ -1,0 +1,213 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for Failed to commit area from 0x00000000c2e00000 to 0x00000000c6c00000 of length 65011712.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3315), pid=6080, tid=10140
+#
+# JRE version:  (14.0.2+12) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=Cp1252 -XX:+ShowCodeDetailsInExceptionMessages org.testng.remote.RemoteTestNG -serport 51414 -protocol json -d C:\Users\acer\eclipse-workspace\FrameWork1\test-output C:\Users\acer\AppData\Local\Temp\testng-eclipse--880535290\testng-customsuite.xml
+
+Host: Intel(R) Core(TM) i3-2328M CPU @ 2.20GHz, 4 cores, 3G,  Windows 8 , 64 bit Build 9200 (6.2.9200.16859)
+Time: Mon Nov 22 13:37:27 2021 India Standard Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000047c2023000):  JavaThread "Unknown thread" [_thread_in_vm, id=10140, stack(0x00000047bff60000,0x00000047c0060000)]
+
+Stack: [0x00000047bff60000,0x00000047c0060000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5f8a9a]
+V  [jvm.dll+0x74247a]
+V  [jvm.dll+0x743c2f]
+V  [jvm.dll+0x744273]
+V  [jvm.dll+0x20d288]
+V  [jvm.dll+0x5f5dea]
+V  [jvm.dll+0x5eac45]
+V  [jvm.dll+0x2c7e9c]
+V  [jvm.dll+0x2c7cd2]
+V  [jvm.dll+0x2cdbbc]
+V  [jvm.dll+0x313fe8]
+V  [jvm.dll+0x313710]
+V  [jvm.dll+0x2a092a]
+V  [jvm.dll+0x2a1a79]
+V  [jvm.dll+0x71fd48]
+V  [jvm.dll+0x321c14]
+V  [jvm.dll+0x70112c]
+V  [jvm.dll+0x392def]
+V  [jvm.dll+0x394e61]
+C  [jli.dll+0x524b]
+C  [ucrtbase.DLL+0x203ba]
+C  [KERNEL32.DLL+0x1842]
+C  [ntdll.dll+0x3df11]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000007f8bb4d3038, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000047c2051000 GCTaskThread "GC Thread#0" [stack: 0x00000047dbd20000,0x00000047dbe20000] [id=8504]
+  0x00000047c205b000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000047dbe20000,0x00000047dbf20000] [id=10888]
+  0x00000047c205d800 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000047dbf20000,0x00000047dc020000] [id=6484]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007f8bad01257]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000047c201f1a0] Heap_lock - owner thread: 0x00000047c2023000
+
+Heap address: 0x00000000c2e00000, size: 978 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+
+Dynamic libraries:
+0x000007f66ff80000 - 0x000007f66ff8f000 	C:\Program Files\Java\jdk-14.0.2\bin\javaw.exe
+0x000007f8e6c80000 - 0x000007f8e6e3d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x000007f8e5120000 - 0x000007f8e5257000 	C:\Windows\system32\KERNEL32.DLL
+0x000007f8e3c50000 - 0x000007f8e3d44000 	C:\Windows\system32\KERNELBASE.dll
+0x000007f8c5ea0000 - 0x000007f8c5eb8000 	C:\Program Files\Java\jdk-14.0.2\bin\jli.dll
+0x000007f8c5970000 - 0x000007f8c5985000 	C:\Program Files\Java\jdk-14.0.2\bin\VCRUNTIME140.dll
+0x000007f8d1e60000 - 0x000007f8d1e64000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x000007f8d1d90000 - 0x000007f8d1d94000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x000007f8c6850000 - 0x000007f8c6853000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x000007f8d1d20000 - 0x000007f8d1d25000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-math-l1-1-0.dll
+0x000007f8c6270000 - 0x000007f8c6273000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x000007f8c6210000 - 0x000007f8c6213000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x000007f8e6ba0000 - 0x000007f8e6c7e000 	C:\Windows\system32\ADVAPI32.dll
+0x000007f8e1af0000 - 0x000007f8e1d5a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9200.17359_none_4188b989718cf1c6\COMCTL32.dll
+0x000007f8e4050000 - 0x000007f8e419c000 	C:\Windows\system32\USER32.dll
+0x000007f8e0c60000 - 0x000007f8e0c69000 	C:\Windows\SYSTEM32\VERSION.dll
+0x000007f8c5f00000 - 0x000007f8c5f03000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x000007f8c5c00000 - 0x000007f8c5c04000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-string-l1-1-0.dll
+0x000007f8c5960000 - 0x000007f8c5964000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x000007f8e44c0000 - 0x000007f8e4565000 	C:\Windows\system32\msvcrt.dll
+0x000007f8e50d0000 - 0x000007f8e5118000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007f8e4370000 - 0x000007f8e44b5000 	C:\Windows\system32\RPCRT4.dll
+0x000007f8e6600000 - 0x000007f8e6741000 	C:\Windows\system32\GDI32.dll
+0x000007f8bc220000 - 0x000007f8bc31c000 	C:\Program Files\Java\jdk-14.0.2\bin\ucrtbase.DLL
+0x000007f8e6750000 - 0x000007f8e6789000 	C:\Windows\system32\IMM32.DLL
+0x000007f8e4a10000 - 0x000007f8e4b25000 	C:\Windows\system32\MSCTF.dll
+0x000007f8c53a0000 - 0x000007f8c543b000 	C:\Program Files\Java\jdk-14.0.2\bin\msvcp140.dll
+0x000007f8c5380000 - 0x000007f8c5383000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-time-l1-1-0.dll
+0x000007f8c5390000 - 0x000007f8c5393000 	C:\Program Files\Java\jdk-14.0.2\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x000007f8baa50000 - 0x000007f8bb56e000 	C:\Program Files\Java\jdk-14.0.2\bin\server\jvm.dll
+0x000007f8dcd40000 - 0x000007f8dcd49000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x000007f8e06c0000 - 0x000007f8e06e0000 	C:\Windows\SYSTEM32\WINMM.dll
+0x000007f8e69a0000 - 0x000007f8e69a7000 	C:\Windows\system32\PSAPI.DLL
+0x000007f8e6b40000 - 0x000007f8e6b98000 	C:\Windows\system32\WS2_32.dll
+0x000007f8e0050000 - 0x000007f8e0083000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000007f8e69b0000 - 0x000007f8e69b9000 	C:\Windows\system32\NSI.dll
+0x000007f8e3fe0000 - 0x000007f8e402f000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x000007f8e3bc0000 - 0x000007f8e3be2000 	C:\Windows\system32\DEVOBJ.dll
+0x000007f8c62a0000 - 0x000007f8c62aa000 	C:\Program Files\Java\jdk-14.0.2\bin\jimage.dll
+0x000007f8dcbb0000 - 0x000007f8dcd13000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x000007f8c0d00000 - 0x000007f8c0d25000 	C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+0x000007f8c0ce0000 - 0x000007f8c0cf6000 	C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-14.0.2\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9200.17359_none_4188b989718cf1c6;C:\Program Files\Java\jdk-14.0.2\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=Cp1252 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.testng.remote.RemoteTestNG -serport 51414 -protocol json -d C:\Users\acer\eclipse-workspace\FrameWork1\test-output C:\Users\acer\AppData\Local\Temp\testng-eclipse--880535290\testng-customsuite.xml
+java_class_path (initial): C:\Users\acer\eclipse\java-2021-062\eclipse\configuration\org.eclipse.osgi\440\0\.cp\lib\testng-remote.jar;C:\Users\acer\eclipse-workspace\FrameWork1\target\test-classes;C:\Users\acer\eclipse-workspace\FrameWork1\target\classes;C:\Users\acer\.m2\repository\io\github\bonigarcia\webdrivermanager\5.0.3\webdrivermanager-5.0.3.jar;C:\Users\acer\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\acer\.m2\repository\com\google\code\gson\gson\2.8.8\gson-2.8.8.jar;C:\Users\acer\.m2\repository\org\jsoup\jsoup\1.14.2\jsoup-1.14.2.jar;C:\Users\acer\.m2\repository\com\github\docker-java\docker-java\3.2.12\docker-java-3.2.12.jar;C:\Users\acer\.m2\repository\com\github\docker-java\docker-java-core\3.2.12\docker-java-core-3.2.12.jar;C:\Users\acer\.m2\repository\com\github\docker-java\docker-java-api\3.2.12\docker-java-api-3.2.12.jar;C:\Users\acer\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\acer\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\acer\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\acer\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\acer\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\acer\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\acer\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\acer\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\acer\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\acer\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.12\docker-java-transport-httpclient5-3.2.12.jar;C:\Users\acer\.m2\repository\com\github\docker-java\docker-java-transport\3.2.12\docker-java-transport-3.2.12.jar;C:\Users\acer\.m2\repository\o
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1025507328                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 1025507328                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jre1.8.0_291\bin
+PATH=C:/Program Files/Java/jdk-14.0.2/bin/server;C:/Program Files/Java/jdk-14.0.2/bin;C:\Program Files\Java\jre1.8.0_291\bin;C:\Program Files\Java\jdk1.8.0_291\bin;C:\Users\acer\Desktop;
+USERNAME=acer
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8 , 64 bit Build 9200 (6.2.9200.16859)
+OS uptime: 4 days 22:31 hours
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, system-wide physical 3909M (290M free)
+TotalPageFile size 15685M (AvailPageFile size 26M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 54M, peak: 115M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46) for windows-amd64 JRE (14.0.2+12-46), built on Jul  9 2020 00:35:52 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
